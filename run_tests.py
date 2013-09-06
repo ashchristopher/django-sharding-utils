@@ -51,9 +51,12 @@ if not settings.configured:
     settings.configure(DATABASES=_DATABASES,INSTALLED_APPS=_INSTALLED_APPS)
 
 
-def run_tests():
+def run_tests(*test_args):
+    if not test_args:
+        test_args = []
+
     from django.test.simple import DjangoTestSuiteRunner
-    failures = DjangoTestSuiteRunner(verbosity=1, interactive=True, failfast=False).run_tests([])
+    failures = DjangoTestSuiteRunner(verbosity=1, interactive=True, failfast=False).run_tests(test_args)
     sys.exit(failures)
 
 
