@@ -52,9 +52,8 @@ if not settings.configured:
 
 
 def run_tests():
-    test_args = ['sharding_utils', ]
     from django.test.simple import DjangoTestSuiteRunner
-    failures = DjangoTestSuiteRunner(verbosity=1, interactive=True, failfast=False).run_tests(test_args)
+    failures = DjangoTestSuiteRunner(verbosity=1, interactive=True, failfast=False).run_tests([])
     sys.exit(failures)
 
 
