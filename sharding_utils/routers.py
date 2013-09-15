@@ -48,11 +48,14 @@ class BaseAppRouter(object):
             return None
 
     def allow_syncdb(self, db, model):
-        if model._meta.app_label in ['south']:
-            return True
-
         if db == self.db_name:
-            return model._meta.app_label == self.app_name
+
+            if model._meta.app_label in ['south', ]:
+                return True
+
+            if db == self.db_name:
+                return model._meta.app_label == self.app_name
+
         return None
 
 
