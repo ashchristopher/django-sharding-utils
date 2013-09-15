@@ -1,5 +1,1 @@
-from django.test import TestCase
-
-
-class MyTestCase(TestCase):
-    pass
+from .test_cases import *

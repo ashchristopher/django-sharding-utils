@@ -1,13 +1,12 @@
 #!/usr/bin/env python
-import os
 import sys
 
 from django.conf import settings
-from django.core.management import execute_from_command_line
 
 
 _INSTALLED_APPS = (
     'sharding_utils',
+    'sharding_utils.tests.test_project.blog',
 )
 
 
