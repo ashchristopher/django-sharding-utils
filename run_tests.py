@@ -7,6 +7,7 @@ from django.conf import settings
 _INSTALLED_APPS = (
     'sharding_utils',
     'sharding_utils.tests.test_project.blog',
+    'sharding_utils.tests.test_project.id_generation',
 )
 
 
